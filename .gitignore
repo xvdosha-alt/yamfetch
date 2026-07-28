@@ -1,0 +1,11 @@
+.env
+settings.json
+downloads/
+media/
+users.db
+bot.log
+last_update_id.txt
+__pycache__/
+*.pyc
+.venv/
+venv/

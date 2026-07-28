@@ -1,0 +1,26 @@
+[project]
+name = "yamfetch"
+version = "1.0.0"
+description = "Yandex Music downloader — Telegram bot and CLI"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "xvDosha" }]
+requires-python = ">=3.10"
+dependencies = [
+  "pyTelegramBotAPI",
+  "yandex-music",
+  "requests",
+  "numpy",
+  "scipy",
+  "pydub",
+  "mutagen",
+  "vkpymusic",
+  "python-dotenv",
+]
+
+[project.scripts]
+yamfetch = "ym_bot.cli.main:main"
+
+[project.urls]
+Homepage = "https://github.com/xvdosha-alt/yamfetch"
+Repository = "https://github.com/xvdosha-alt/yamfetch"

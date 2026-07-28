@@ -1,0 +1,9 @@
+pyTelegramBotAPI
+yandex-music
+requests
+numpy
+scipy
+pydub
+mutagen
+vkpymusic
+python-dotenv
