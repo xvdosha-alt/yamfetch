@@ -1,11 +1,15 @@
-# yamfetch
+EN | [RU](docs/README_RU.md)
 
-Telegram-бот и CLI для скачивания музыки из Яндекс.Музыки (MP3 192 kbps).  
-Опционально — VK Music для поиска версий без цензуры в боте.
+## yamfetch 🎵
+
+Telegram bot and CLI for downloading music from Yandex Music (MP3 192 kbps).
+Optional VK Music integration for finding uncensored versions in the bot.
 
 **yamfetch** = **Ya**ndex **M**usic **fetch**
 
-## Установка
+## 🚀 Quick start
+
+### Install
 
 ```bash
 git clone https://github.com/xvdosha-alt/yamfetch.git
@@ -16,41 +20,39 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-На macOS для `pydub` может понадобиться ffmpeg:
+On macOS, `pydub` may require ffmpeg:
 
 ```bash
 brew install ffmpeg
 ```
 
-## Быстрый старт
-
-### 1. Настройка `.env`
+### 1. Configure `.env`
 
 ```bash
 cp .env.example .env
 ```
 
-| Переменная | Описание |
+| Variable | Description |
 |---|---|
-| `YM_TOKEN` | OAuth-токен Яндекс.Музыки |
-| `YM_SESSION_ID` | Session_id (опционально) |
+| `YM_TOKEN` | Yandex Music OAuth token |
+| `YM_SESSION_ID` | Session_id (optional) |
 | `BOT_TOKEN` | Telegram bot token |
-| `VK_TOKEN` | VK token (опционально) |
-| `ADMIN_IDS` | ID админов через запятую: `123,456` |
-| `CHANNEL_USERNAME` | Username канала для подписки |
-| `CHANNEL_LINK` | Ссылка на канал |
-| `OUTPUT_DIR` | Папка для CLI-скачиваний |
-| `MEDIA_DIR` | Временная папка бота |
-| `DB_NAME` | Файл SQLite |
-| `AUDIO_BITRATE` | Битрейт MP3 (по умолчанию 192) |
+| `VK_TOKEN` | VK token (optional) |
+| `ADMIN_IDS` | Admin IDs comma-separated: `123,456` |
+| `CHANNEL_USERNAME` | Channel username for subscription check |
+| `CHANNEL_LINK` | Channel link |
+| `OUTPUT_DIR` | Folder for CLI downloads |
+| `MEDIA_DIR` | Bot temp folder |
+| `DB_NAME` | SQLite file |
+| `AUDIO_BITRATE` | MP3 bitrate (default 192) |
 
-Приоритет: **`.env` → `settings.json` → defaults**
+Priority: **`.env` → `settings.json` → defaults**
 
 ```bash
 python downld.py auth
 ```
 
-### 2. Доступ к Яндекс.Музыке
+### 2. Yandex Music access
 
 ```bash
 python downld.py auth
@@ -61,15 +63,15 @@ python downld.py auth test
 
 #### OAuth token
 
-1. [music.yandex.ru](https://music.yandex.ru) → войти
+1. [music.yandex.ru](https://music.yandex.ru) - sign in
 2. DevTools → Application → Local Storage / Cookies
 3. `python downld.py auth ym-token`
 
 #### Cookie / Session_id
 
-1. Скопируй `Session_id` из cookies
+1. Copy `Session_id` from cookies
 2. `python downld.py auth ym-cookie`
-3. Вставь значение, строку `Session_id=...` или Netscape `cookies.txt`
+3. Paste the value, `Session_id=...` string, or Netscape `cookies.txt`
 
 ### 3. CLI
 
@@ -81,7 +83,7 @@ python downld.py cli download -u "https://music.yandex.ru/album/123/track/456"
 python downld.py cli download -q "artist track" -o ./my_music
 ```
 
-### 4. Telegram-бот
+### 4. Telegram bot
 
 ```bash
 python downld.py auth bot-token
@@ -94,26 +96,26 @@ CHANNEL_USERNAME=your_channel
 CHANNEL_LINK=https://t.me/your_channel
 ```
 
-Команды: `/start`, `/help`, `/has_edit`, `/admin`, `/stats`, `/clear`
+Commands: `/start`, `/help`, `/has_edit`, `/admin`, `/stats`, `/clear`
 
-## Команды
+## 📋 Commands
 
-| Команда | Описание |
+| Command | Description |
 |---|---|
-| `python downld.py bot` | Telegram-бот |
-| `python downld.py auth` | Настройка |
-| `python downld.py auth show` | Текущие настройки |
+| `python downld.py bot` | Telegram bot |
+| `python downld.py auth` | Setup |
+| `python downld.py auth show` | Current settings |
 | `python downld.py auth ym-token` | Yandex OAuth |
 | `python downld.py auth ym-cookie` | Cookie / Session_id |
 | `python downld.py auth bot-token` | Telegram token |
-| `python downld.py auth test` | Проверка API |
-| `python downld.py cli search -q "..."` | Поиск |
-| `python downld.py cli download -q "..."` | Скачать |
-| `python downld.py cli download -u URL` | Скачать по ссылке |
+| `python downld.py auth test` | API check |
+| `python downld.py cli search -q "..."` | Search |
+| `python downld.py cli download -q "..."` | Download |
+| `python downld.py cli download -u URL` | Download by URL |
 
-После `pip install -e .` доступна команда `yamfetch` с теми же subcommands.
+After `pip install -e .`, the `yamfetch` command is available with the same subcommands.
 
-## Структура
+## Structure
 
 ```
 yamfetch/
@@ -130,11 +132,7 @@ yamfetch/
 └── downloads/
 ```
 
-## Безопасность
+## Security
 
-- Не коммить `.env` и `settings.json`
-- Используй только свой аккаунт Яндекс.Музыки
-
-## Автор
-
-[xvDosha](https://github.com/xvdosha-alt)
+- Do not commit `.env` and `settings.json`
+- Use only your own Yandex Music account
