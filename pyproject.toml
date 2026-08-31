@@ -22,5 +22,5 @@ dependencies = [
 yamfetch = "ym_bot.cli.main:main"
 
 [project.urls]
-Homepage = "https://github.com/xvdosha-alt/yamfetch"
-Repository = "https://github.com/xvdosha-alt/yamfetch"
+Homepage = "https://github.com/xvDoshik/yamfetch"
+Repository = "https://github.com/xvDoshik/yamfetch"

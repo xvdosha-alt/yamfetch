@@ -12,7 +12,7 @@ Telegram-бот и CLI для скачивания музыки из Яндек�
 ### Установка
 
 ```bash
-git clone https://github.com/xvdosha-alt/yamfetch.git
+git clone https://github.com/xvDoshik/yamfetch.git
 cd yamfetch
 python3 -m venv .venv
 source .venv/bin/activate
